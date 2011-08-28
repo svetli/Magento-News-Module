@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    Magna
+ * @package     Magna_News
+ * @copyright   Copyright (c) 2011 Magna Inc. (http://www.magna-studio.eu)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+
+<layout version="0.1.0">
+	
+	<!-- show one item -->
+	<magna_news_view_show translate="label">
+		<label>News View</label>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/2columns-right.phtml</template>
+			</action>
+		</reference>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/magna_news.css</name>
+			</action>
+		</reference>
+		<!--reference name="right">
+			<block type="magna_news/layer_view" name="news_rightnav" template="magna_news/layer/view.phtml" />
+		</reference-->
+		<reference name="content">
+			<block type="magna_news/view" name="news_view" />
+			<block type="magna_news/list" name="news_list" template="magna_news/list.phtml">
+				<action method="setItemsCount"><count>3</count></action>
+			</block>
+		</reference>
+	</magna_news_view_show>
+	
+	<magna_news_view_list translate="label">
+		<label>News List</label>
+		<reference name="root">
+			<action method="setTemplate">
+				<template>page/2columns-left.phtml</template>
+			</action>
+		</reference>
+		<reference name="head">
+			<action method="addItem">
+				<type>skin_css</type>
+				<name>css/magna_news.css</name>
+			</action>
+		</reference>
+		<reference name="content">
+			<block type="magna_news/list" name="news_list" template="magna_news/list.phtml">
+				<block type="magna_news/list_toolbar" name="news_list_toolbar"/>
+				<action method="setToolbarBlockName"><name>news_list_toolbar</name></action>
+			</block>
+		</reference>
+	</magna_news_view_list>
+	
+</layout>

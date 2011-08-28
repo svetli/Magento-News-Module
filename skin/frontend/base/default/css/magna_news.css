@@ -1,0 +1,33 @@
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2011 Magna Inc. (http://www.magna-studio.eu)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/* News list */
+.news-list-wrapper			{}
+.news-list li.item			{ border-bottom:1px solid #d9ddd3; padding:12px 10px; }
+.news-list li.item.last 	{ border-bottom:0; }
+.news-list .item-title		{ margin:0 0 5px; font-weight:bold; font-size:13px; color:#203548; }
+.news-list .item-title a	{ color:#203548; }
+.news-list .item-content	{ clear:both; padding:6px 0 0; margin:0 0 15px; line-height:1.35; }
+.news-list .item-date		{ font-size:10px; color:#7f7f7f; }
+
+/* News view */
+.news-item .item-title		{}
+.news-item .item-date		{ font-size:10px; color:#7f7f7f; }
+.news-item .item-details	{ clear:both; padding:6px 0 0; margin:0 0 15px; line-height:1.35; }
+.pager .limiter a			{ margin: 0 10px 0 10px; };

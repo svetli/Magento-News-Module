@@ -1,0 +1,39 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * @category    Magna
+ * @package     Magna_News
+ * @copyright   Copyright (c) 2011 Magna Inc. (http://www.magna-studio.eu)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php $_newsCollection = $this->getLoadedNewsCollection() ?>
+<?php if ( $_newsCollection->count() ): ?>
+	<?php echo $this->getToolbarHtml() ?>
+	<div class="news-list-wrapper">
+		<ol class="news-list" id="news-list">
+			<?php $_iterator = 0 ?>
+			<?php foreach ( $_newsCollection as $_news ): ?>
+				<li class="item<?php if( ++$_iterator == sizeof($_newsCollection) ): ?> last<?php endif; ?>">
+					<div class="item-wrapper">
+						<h4 class="item-title"><a href="<?php echo $this->getReadMoreUrl($_news) ?>"><?php echo $_news->getTitle() ?></a></h4>
+						<div class="item-content"><?php echo $this->stripContent( $_news->getContent() ) ?></div>
+						<div class="item-date"><?php echo $this->dateFormat( $_news->getDatePosted() ) ?></div>
+					</div>
+				</li>
+			<?php endforeach; ?>
+		</ol>
+	</div>
+<?php endif; ?>

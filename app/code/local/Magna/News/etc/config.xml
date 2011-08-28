@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    Magna
+ * @package     Magna_News
+ * @copyright   Copyright (c) 2011 Magna Inc. (http://www.magna-studio.eu)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+-->
+<config>
+	<modules>
+		<Magna_News>
+			<version>0.1.0</version>
+		</Magna_News>
+	</modules>
+	
+	<global>
+		<models>
+			<magna_news>
+				<class>Magna_News_Model</class>
+				<resourceModel>magna_news_resource</resourceModel>
+			</magna_news>
+			<magna_news_resource>
+				<class>Magna_News_Model_Resource</class>
+				<entities>
+					<magna_news>
+						<table>magna_news</table>
+					</magna_news>
+					<magna_news_store>
+						<table>magna_news_store</table>
+					</magna_news_store>
+				</entities>
+			</magna_news_resource>
+		</models>
+		
+		<resources>
+			<magna_news_setup>
+				<setup>
+					<module>Magna_News</module>
+				</setup>
+			</magna_news_setup>
+		</resources>
+		
+		<blocks>
+			<magna_news>
+				<class>Magna_News_Block</class>
+			</magna_news>
+		</blocks>
+		
+		<models>
+			<magna_news>
+				<class>Magna_News_Model</class>
+			</magna_news>
+		</models>
+		
+		<helpers>
+			<magna_news>
+				<class>Magna_News_Helper</class>
+			</magna_news>
+		</helpers>
+		
+		<events>
+			<controller_front_init_routers>
+				<observers>
+					<magna_news>
+						<class>Magna_News_Controller_Router</class>
+						<method>initControllerRouters</method>
+					</magna_news>
+				</observers>
+			</controller_front_init_routers>
+		</events>
+	</global>
+	
+	<frontend>
+		<routers>
+			<magna_news>
+				<use>standard</use>
+				<args>
+					<module>Magna_News</module>
+					<frontName>news</frontName>
+				</args>
+			</magna_news>
+		</routers>
+		<layout>
+			<updates>
+				<magna_news>
+					<file>magna_news.xml</file>
+				</magna_news>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<Magna_News>
+					<files>
+						<default>Magna_News.csv</default>
+					</files>
+				</Magna_News>
+			</modules>
+		</translate>
+	</frontend>
+		
+	<admin>
+		<routers>
+			<magna_news>
+				<use>admin</use>
+				<args>
+					<module>Magna_News</module>
+					<frontName>magna_news</frontName>
+				</args>
+			</magna_news>
+		</routers>
+	</admin>
+	
+	<adminhtml>
+		<layout>
+			<updates>
+				<magna_news>
+					<file>magna_news.xml</file>
+				</magna_news>
+			</updates>
+		</layout>
+		<translate>
+			<modules>
+				<Magna_News>
+					<files>
+						<default>Magna_News.csv</default>
+					</files>
+				</Magna_News>
+			</modules>
+		</translate>
+	</adminhtml>
+	
+	<default>
+		<magna_news>
+			<frontend>
+				<per_page_values>5,10,20</per_page_values>
+				<default_sort_field>date_posted</default_sort_field>
+			</frontend>
+		</magna_news>
+	</default>
+	
+</config>
